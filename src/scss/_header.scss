@@ -1,0 +1,139 @@
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 0;
+  background-color: transparent;
+  color: $white-color;
+  z-index: 3;
+
+  &.pinned {
+    background-color: $secondary-purple;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 60px;
+  }
+  a {
+    color: $white-color;
+    text-decoration: none;
+    position: relative;
+    &.active {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        width: 90%;
+        height: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $white-color;
+      }
+    }
+  }
+
+  .header-logo {
+    font-size: 24px;
+    font-weight: 900;
+  }
+
+  .burger {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    height: 17px;
+    outline: none;
+    padding: 0;
+    pointer-events: initial;
+    vertical-align: middle;
+    width: 27px;
+    z-index: 10;
+    &:before,
+    &:after {
+      background-color: #fff;
+      content: "";
+      display: block;
+      height: 2px;
+      position: absolute;
+      transform-origin: 50% 50%;
+      transition: 0.5s;
+      width: 27px;
+    }
+    &:before {
+      bottom: 50%;
+    }
+    &:after {
+      bottom: 0;
+      right: 0;
+      width: 18px;
+    }
+    span {
+      background-color: #fff;
+      display: block;
+      height: 2px;
+      width: 27px;
+      transition: 0.5s;
+    }
+
+    &.active {
+      &:before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+      &:after {
+        background-color: transparent;
+        transition: background 0.2s ease-out;
+      }
+
+      span {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -60vw;
+  width: 55vw;
+  height: 100vh;
+  background-color: $secondary-purple;
+  color: white;
+  box-sizing: border-box;
+  padding: 80px 20px;
+  z-index: 9;
+  transition: 0.5s;
+  ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  &.active {
+    right: 0px;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 992px) {
+  header {
+    nav {
+      display: none;
+    }
+    &.pinned {
+      padding: 8px 0;
+    }
+  }
+}

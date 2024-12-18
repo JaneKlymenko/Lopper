@@ -1,0 +1,155 @@
+#intro {
+  padding: 90px 0;
+  min-height: 740px;
+  display: flex;
+  align-items: center;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.intro-quote__container {
+  position: relative;
+}
+
+.intro-quote__block {
+  position: absolute;
+  background-color: $secondary-purple;
+  width: 441px;
+  height: 540px;
+  right: -240px;
+  top: -140px;
+  z-index: 1;
+}
+
+.intro-quote__block-text {
+  background-color: $secondary-purple;
+  color: $white-color;
+  z-index: 3;
+  width: 377px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  box-sizing: border-box;
+  padding: 40px;
+
+  q {
+    font-size: 22.5px;
+    font-family: "Noticia Text", serif;
+    font-weight: 400;
+    font-style: italic;
+    position: relative;
+
+    &::after {
+      color: #f4f4ed;
+      font-size: 140px;
+      position: absolute;
+      bottom: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.5;
+    }
+    &::before {
+      color: #f4f4ed;
+      font-size: 140px;
+      position: absolute;
+      top: -110px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.5;
+    }
+  }
+}
+
+.intro-quote__image {
+  position: absolute;
+  z-index: 2;
+  left: -300px;
+  top: 40px;
+  height: 740px;
+}
+
+@media (max-width: 1400px) {
+  .intro-quote__block {
+    width: 350px;
+    height: 505px;
+    right: -25px;
+    top: -140px;
+  }
+
+  .intro-quote__block-text {
+    width: 253px;
+    height: 465px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #intro {
+    padding: 70px 0;
+    min-height: 740px;
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .intro-quote__block {
+    width: 309px;
+    height: 310px;
+    right: -25px;
+    top: -416px;
+  }
+  .intro-quote__block-text {
+    width: 190px;
+    height: 270px;
+    padding: 30px;
+  }
+  .intro-quote__image {
+    left: -135px;
+    height: 440px;
+  }
+
+  .futures-slider {
+    max-width: 415px;
+  }
+
+  .swiper-slide img {
+    max-height: 580px;
+  }
+}
+
+@media (max-width: 992px) {
+  .intro-quote__block {
+    width: 309px;
+    height: 310px;
+    right: 0%;
+    top: 0;
+  }
+  .intro-quote__container {
+    position: relative;
+    height: 480px;
+  }
+  .futures-slider {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .intro-quote__block {
+    width: 200px;
+    height: 310px;
+    right: 0;
+    top: 0;
+  }
+  .intro-quote__block-text {
+    width: 165px;
+    height: 310px;
+    top: 0px;
+    right: 0px;
+    padding: 20px;
+  }
+}

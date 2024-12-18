@@ -1,0 +1,71 @@
+#newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 124px 0;
+  gap: 40px;
+  p {
+    color: $text-color;
+    font-size: 16px;
+  }
+  form {
+    border-bottom: 2px solid $light-grey;
+
+    button {
+      border: none;
+      background-color: $white-color;
+      padding: 16px;
+      color: $primary-pink;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 207%;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      background: linear-gradient(#fff, #f2f2f2);
+      cursor: pointer;
+    }
+  }
+  input {
+    border: none;
+    padding: 16px;
+    min-width: 300px;
+    &::placeholder {
+      color: $text-color;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 207%;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  input {
+    border: none;
+    padding: 12px;
+    min-width: 300px;
+    &::placeholder {
+      color: $text-color;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 207%;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  #newsletter {
+    form {
+      button {
+        font-size: 12px;
+      }
+    }
+    input {
+      min-width: 200px;
+    }
+  }
+}
